@@ -9,7 +9,22 @@ var turns = 0;
 
 var imgOrder = ["14", "3", "6", "1", "7", "9", "5", "2", "13", "4", "11", "10", "8", "12", "15", "16"];
 
+function shuffleList(imgOrder) {
+    for (var i = imgOrder.length - 1; i > 0; i--) {
+    
+        // Generate random number
+        var j = Math.floor(Math.random() * (i + 1));
+                    
+        var temp = imgOrder[i];
+        imgOrder[i] = imgOrder[j];
+        imgOrder[j] = temp;
+    }
+        
+    return imgOrder;
+}
+
 window.onload = function() {
+    shuffleList(imgOrder)
     for (let r=0; r < rows; r++) {
         for (let c=0; c < columns; c++) {
 
