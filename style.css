@@ -10,8 +10,8 @@ body{
 }
 
 #board{
-    width: 480px;
-    height: 480px;
+    width: 360px;
+    height: 360px;
     background-color: aliceblue;
     border: 10px solid #0c67ae;
     margin: 0 auto;
@@ -20,13 +20,13 @@ body{
 }
 
 #board img{
-    width: 118px;
-    height: 118px;
+    width: 88px;
+    height: 88px;
     border: 1px solid #0c67ae;
 }
 
 .footer{
-    margin-top: 15px;
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
     font-size: 20px;
@@ -48,3 +48,31 @@ body{
     font-weight: bold;
     margin: auto 0;
 }
+
+a:link, a:visited {
+    background-color: #0c67ae;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 25px;
+  }
+  
+  a:hover, a:active {
+    background-color: #0c67ae;
+  }
+
+  .hint{
+    position: absolute;
+    top: 180px;
+    left: -300px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .hint img{
+      width: 200px;
+      height: 200px;
+
+  }

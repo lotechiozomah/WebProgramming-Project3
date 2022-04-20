@@ -2,26 +2,29 @@ var rows = 4;
 var columns = 4;
 
 var currTile;
-var otherTile; //blank tile
+var otherTile; 
 
 var turns = 0;
 
-var imgOrder = ["11", "4", "13", "2", "14", "8", "5", "12", "1", "6", "15", "7", "9", "16", "10", "3"];
+
+var imgOrder = ["14", "3", "6", "1", "7", "9", "5", "2", "13", "4", "11", "10", "8", "12", "15", "16"];
 
 window.onload = function() {
     for (let r=0; r < rows; r++) {
         for (let c=0; c < columns; c++) {
 
+           
             let tile = document.createElement("img");
             tile.id = r.toString() + "-" + c.toString();
             tile.src = imgOrder.shift() + ".jpg";
 
-            tile.addEventListener("dragstart", dragStart); 
+            
+            tile.addEventListener("dragstart", dragStart);  
             tile.addEventListener("dragover", dragOver);    
             tile.addEventListener("dragenter", dragEnter);  
             tile.addEventListener("dragleave", dragLeave);  
             tile.addEventListener("drop", dragDrop);        
-            tile.addEventListener("dragend", dragEnd);     
+            tile.addEventListener("dragend", dragEnd);      
 
             document.getElementById("board").append(tile);
 
@@ -50,11 +53,11 @@ function dragDrop() {
 }
 
 function dragEnd() {
-    if (!otherTile.src.includes("3.jpg")) {
+    if (!otherTile.src.includes("16.jpg")) {
         return;
     }
 
-    let currCoords = currTile.id.split("-");
+    let currCoords = currTile.id.split("-"); 
     let r = parseInt(currCoords[0]);
     let c = parseInt(currCoords[1]);
 
@@ -78,7 +81,7 @@ function dragEnd() {
         otherTile.src = currImg;
 
         turns += 1;
-        document.getElementById("moves").innerText = moves;
+        document.getElementById("turns").innerText = turns;
     }
 
 
