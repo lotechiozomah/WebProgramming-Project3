@@ -1,3 +1,4 @@
+"use strict";
 var rows = 4;
 var columns = 4;
 
@@ -68,7 +69,7 @@ function dragDrop() {
 }
 
 function dragEnd() {
-    if (!otherTile.src.includes("16.jpg")) {
+    if (!otherTile.src.includes("16.jpg")) { // picks the empty picture
         return;
     }
 
